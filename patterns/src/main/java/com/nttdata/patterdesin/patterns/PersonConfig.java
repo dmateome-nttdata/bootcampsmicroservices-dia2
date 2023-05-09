@@ -8,16 +8,16 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class PersonConfig {
 
-    @Bean
+    @Bean("singletonPerson")
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public Person singletonPerson() {
-        return Person.getPerson("John", 30);
+        return new Person("David", 30);
     }
 
-    @Bean
+    @Bean("prototypePerson")
     @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
     public Person prototypePerson() {
-        return Person.getPerson("Jane", 25);
+        return new Person("Mateo", 25);
     }
 
 }
