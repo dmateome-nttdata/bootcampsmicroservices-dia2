@@ -13,9 +13,9 @@ public class PersonaProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Object result = null;
-        System.out.println("Before calling " + method.getName() + " method...");
+        System.out.println("Before " + method.getName());
         result = method.invoke(persona, args);
-        System.out.println("After calling " + method.getName() + " method...");
+        System.out.println("After " + method.getName());
         return result;
     }
 }
